@@ -23,7 +23,7 @@ class PrestamosController extends Controller
           $id=Equipo::all()->pluck('id');
         //$prestamos = PrestamoEquipo::paginate(10);
        $prestamos['prestamos']=PrestamoEquipo::JOIN("users","users.id","=","prestamo_equipos.usuarios_us_id")
-                                    ->JOIN("equipos","equipos.id","=","prestamo_equipos.id")
+                                    ->JOIN("equipos","equipos.id","=","prestamo_equipos.equipos_eq_id")
                                     -> orderBy('prestamo_equipos.id', 'asc')
                                     -> paginate(8); 
             return view('admin.prestamos.index', $prestamos, compact('users','id'));

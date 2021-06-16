@@ -8,12 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class PrestamoEquipo extends Model
 {
     use HasFactory;
-    public function users()
-    {
-        return $this->hasMany(User::class);
-    }
-    public function equipos()
-    {
-        return $this->hasMany(Equipo::class);
-    }
+
 }

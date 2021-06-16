@@ -12,12 +12,15 @@ class Equipo extends Model
    protected $fillable = [
         'eq_modelo', 'eq_marca', 'eq_serial', 'eq_tequid', 'eq_nbiennacional' ,'eq_estatus', 'departamentos_dep_id',
     ];
-    public function tipo_equipos()
+      public function tipo_equipos()
     {
-        return $this->belongsTo(TipoEquipo::class);
+        return $this->belongsToMany(TipoEquipo::class);
     }
-    public function departamentos()
+
+        public function departamentos()
     {
         return $this->belongsTo(Departamento::class);
     }
+
+ 
 }

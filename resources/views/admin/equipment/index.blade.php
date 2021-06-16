@@ -20,8 +20,8 @@
   </thead>
   <tbody>
     <tr>
-    @if(!empty($equipment) && $equipment->count())
-        @foreach($equipment as $key)
+    @if(!empty($equixte) && $equixte->count())
+        @foreach($equixte as $key)
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_serial}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo')  @include('admin.vistasUsuario.verEquipo') @include('admin.equipment.delete')</td>
@@ -31,7 +31,7 @@
   </tbody>
 </table>
 <div class="mt-4">
-{{ $equipment->links() }}
+       
   <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
 </div>
 </div>
@@ -54,3 +54,4 @@
       <script> console.log('Hi!'); </script>
     <script src="{{ asset('js/ajaxEquipo.js') }}"></script>
 @stop 
+

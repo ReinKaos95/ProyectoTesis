@@ -14,11 +14,11 @@
         </button>
       </div>
          <div class="modal-body">
-         <p>Modelo: {{$key->eq_modelo}}</p>
-          <p>Marca: {{$key->eq_marca}}</p>
-          <p>N° Bien Nacional: {{$key->eq_nbiennacional}}</p>
-          <p>Tipo de equipo: {{$key->eq_tequid}}</p>
-          <p>Departamento: {{$key->departamentos_dep_id}}</p>
+         <p>Codigo de Prestamo: {{$key->eq_modelo}}</p>
+          <p>Fecha de Salida: {{$key->eq_marca}}</p>
+          <p>Fecha de Entrada: {{$key->eq_nbiennacional}}</p>
+          <p>Codigo de Prestamo: {{$key->eq_tequid}}</p>
+          <p>Fecha de Salida: {{$key->departamentos_dep_id}}</p>
           <p>Estado: {{$key->eq_estatus}}</p>
 
           

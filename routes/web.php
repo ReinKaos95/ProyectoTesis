@@ -22,9 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 //Rutas de los controladores
 
@@ -61,3 +58,7 @@ Route::delete('/prestamosDelete/{id}', [prestamosController::class, 'destroy']);
 Route::resource('admin/auditoria', auditoriaController::class);*/
 Route::resource('admin/departamentos', departamentosController::class);
 Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
