@@ -26,6 +26,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/dashboard2', function () {
+    return view('dashboard2');
+})->name('dashboard2');
 //Rutas de los controladores
 
 //Ruta principal de los usuarios
