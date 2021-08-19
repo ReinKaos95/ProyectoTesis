@@ -4,7 +4,9 @@
 @if(Auth::User()->us_rol_id==1)
 <h1 class="fw-bold">Bienvenido! {{Auth::user()->usuario}}</h1>
 	<p>Este es un modal de administrador</p>
-	
+	<div id="app">
+	<ExampleComponent></ExampleComponent>
+	</div>
 	@endif
 
 	@if(Auth::User()->us_rol_id==2)
