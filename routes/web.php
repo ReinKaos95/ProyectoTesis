@@ -85,3 +85,8 @@ Route::put('/departamentosUpdate/{id}', [DepartamentoController::class, 'update'
 
 Route::resource('config', configController::class);
 Route::resource('config/ayuda', ayudaController::class);
+
+Route::get('imagen', function ()
+{
+    return view ('profile/imagen');
+});
