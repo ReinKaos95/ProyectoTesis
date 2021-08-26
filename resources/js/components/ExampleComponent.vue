@@ -37,6 +37,7 @@
         },
         data(){
           return{
+            auditoria : {},
             au_maquina : '',
             au_so : '',
             au_ip : '',

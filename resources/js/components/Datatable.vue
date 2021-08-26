@@ -20,23 +20,27 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
-      <td>Mark</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
-<pagination :data="laravelData" @pagination-change-page="getResults"></pagination>
+<pagination :data="auditoria" @pagination-change-page="getResults"></pagination>
 </div>
 </template>
 
 <script>
 export default {
 
-	data() {
-		return {
-			// Our data object that holds the Laravel paginator data
-			laravelData: {},
-		}
-	},
+	 data(){
+          return{
+            auditoria : {},
+            au_maquina : '',
+            au_so : '',
+            au_ip : '',
+            au_navegador : '',
+            au_fecha : ''
+          }
+        },
 
 	mounted() {
 		// Fetch initial results
@@ -49,7 +53,7 @@ export default {
 			axios.get('auditoria/getData?page=' + page)
 				.then(response => {
                     console.log(response)
-					this.laravelData = response.data;
+					this.auditoria = response.data;
 				});
 		}
 	}

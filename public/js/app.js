@@ -5007,8 +5007,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      // Our data object that holds the Laravel paginator data
-      laravelData: {}
+      auditoria: {},
+      au_maquina: '',
+      au_so: '',
+      au_ip: '',
+      au_navegador: '',
+      au_fecha: ''
     };
   },
   mounted: function mounted() {
@@ -5023,7 +5027,7 @@ __webpack_require__.r(__webpack_exports__);
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       axios.get('auditoria/getData?page=' + page).then(function (response) {
         console.log(response);
-        _this.laravelData = response.data;
+        _this.auditoria = response.data;
       });
     }
   }
@@ -5080,6 +5084,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      auditoria: {},
       au_maquina: '',
       au_so: '',
       au_ip: '',
@@ -41882,7 +41887,7 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("pagination", {
-        attrs: { data: _vm.laravelData },
+        attrs: { data: _vm.auditoria },
         on: { "pagination-change-page": _vm.getResults }
       })
     ],
@@ -41927,7 +41932,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("td", [_vm._v("@mdo")]),
           _vm._v(" "),
-          _c("td", [_vm._v("Mark")])
+          _c("td")
         ])
       ])
     ])
