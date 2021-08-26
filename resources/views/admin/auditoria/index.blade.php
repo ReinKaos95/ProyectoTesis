@@ -34,35 +34,7 @@
   </div>
  
   </div>
-  <div class="text-center table-responsive">
-    <table class="table table-striped table-hover" id="equiposTable">
-      <thead>
-        <tr class="bg-dark text-white">
-          <th scope="col">N°</th>
-          <th scope="col">Maquina</th>
-          <th scope="col">Sistema Operativo</th>
-          <th scope="col">IP</th>
-          <th scope="col">Navegador</th>
-          <th scope="col">Fecha</th>
-          <th scope="col">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-    <tr>
-    @if(!empty($auditorias) && $auditorias->count())
-        @foreach($auditorias as $key)
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->au_maquina}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->au_so}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->au_ip}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->au_navegador}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->au_fecha}}</td>
-            <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editAuditoria')</td>
-    </tr>
-    @endforeach
-    @endif
-  </tbody>
-    </table>
-  </div>
+
 </div>
 
 @endsection

@@ -30,7 +30,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "@popperjs/core": "^2.9.2",
-        "bootstrap": "^5.0.2"
+        "@popperjs/core": "^2.9.3",
+        "bootstrap": "^5.0.2",
+        "bootstrap-vue": "^2.21.2"
     }
 }

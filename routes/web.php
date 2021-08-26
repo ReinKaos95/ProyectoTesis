@@ -80,6 +80,12 @@ Route::delete('/prestamosDelete/{id}', [PrestamoEquipoController::class, 'destro
 
 
 Route::resource('admin/auditoria', AuditoriaController::class);
+Route::post('store', [AuditoriaController::class, 'store']);
+
+
+
+
+
 Route::resource('admin/departamentos', DepartamentoController::class);
 Route::put('/departamentosUpdate/{id}', [DepartamentoController::class, 'update']);
 
