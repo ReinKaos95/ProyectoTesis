@@ -17,7 +17,7 @@ class AuditoriaController extends Controller
     }
     public function index()
     {
-        $auditorias=Auditoria::all();
+        //$auditorias=Auditoria::all();
         $auditorias = Auditoria::paginate(10);
         return view('admin.auditoria.index', compact('auditorias'));
     }

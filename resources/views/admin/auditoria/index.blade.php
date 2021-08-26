@@ -34,7 +34,12 @@
   </div>
  
   </div>
-
+	<div id="app">
+	<datatable>
+	
+	</datatable>
+	</div>
+    <script src="{{ asset('js/app.js') }}"></script>
 </div>
 
 @endsection

@@ -80,6 +80,7 @@ Route::delete('/prestamosDelete/{id}', [PrestamoEquipoController::class, 'destro
 
 
 Route::resource('admin/auditoria', AuditoriaController::class);
+Route::get('getData', [PrestamoEquipoController::class, 'index']);
 Route::post('store', [AuditoriaController::class, 'store']);
 
 
