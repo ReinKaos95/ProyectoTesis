@@ -41884,7 +41884,31 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm._m(0),
+      _c("table", { staticClass: "table" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.auditoria.data, function(auditoria, index) {
+            return _c("tr", { key: auditoria.id }, [
+              _c("td", [_vm._v(_vm._s(index) + "}")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(auditoria.au_maqina) + "}")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(auditoria.au_so) + "}")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.auditoria_au_ip) + "}")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(auditoria.au_navegador) + "}")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(auditoria.au_fecha) + "}")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("editar / eliminar")])
+            ])
+          }),
+          0
+        )
+      ]),
       _vm._v(" "),
       _c("pagination", {
         attrs: { data: _vm.auditoria },
@@ -41899,41 +41923,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("table", { staticClass: "table" }, [
-      _c("thead", [
-        _c("tr", [
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Maquina")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("O.S.")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("I.P.")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Navegador")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Fecha")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones.")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tbody", [
-        _c("tr", [
-          _c("td", [_vm._v("Mark")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Otto")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("@mdo")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Mark")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Otto")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("@mdo")]),
-          _vm._v(" "),
-          _c("td")
-        ])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Maquina")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("O.S.")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("I.P.")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Navegador")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Fecha")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones.")])
       ])
     ])
   }

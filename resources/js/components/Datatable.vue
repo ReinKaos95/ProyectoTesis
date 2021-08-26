@@ -13,14 +13,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td></td>
+    <tr v-for="(auditoria,index) in auditoria.data" :key="auditoria.id">
+      <td>{{index}}}</td>
+      <td>{{auditoria.au_maqina}}}</td>
+      <td>{{auditoria.au_so}}}</td>
+      <td>{{auditoria_au_ip}}}</td>
+      <td>{{auditoria.au_navegador}}}</td>
+      <td>{{auditoria.au_fecha}}}</td>
+      <td>editar / eliminar</td>
     </tr>
   </tbody>
 </table>
