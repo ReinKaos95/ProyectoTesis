@@ -50,7 +50,7 @@ export default {
 	methods: {
 		// Our method to GET results from a Laravel endpoint
 		getResults(page = 1) {
-			axios.get('auditoria/getData?page=' + page)
+			axios.get('auditoria?page=' + page)
 				.then(response => {
                     console.log(response)
 					this.auditoria = response.data;
