@@ -1,6 +1,6 @@
 <template>
 <div>
-<button type="button" @click="editData(auditoria.id)" class ="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" @click="editAuditoria(auditoria.id)" class ="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Editar
 </button>
 <!-- Modal -->
@@ -35,7 +35,7 @@
     <label for="Fecha">Fecha</label>
     <input type="date" v-model="edit_au_fecha" id="au_fecha" class="form-control" autofocus>
 </div>
-  <button @click.prevent="registrarAuditoria" class="btn btn-primary">Submit</button>
+  <button @click.prevent="actualizarAuditoria" class="btn btn-primary">Submit</button>
 </form>
       </div>
       <div class="modal-footer">
@@ -57,6 +57,7 @@ export default {
         data(){
           return{
             auditoria : {},
+            id: '',
             au_maquina : '',
             au_so : '',
             au_ip : '',
@@ -70,17 +71,28 @@ export default {
           }
         },
         methods : {
-            editData(id){
-                axios.get('edit_auditoria/'+id)
+            editAuditoria(id){
+               axios.get('edit_auditoria/'+id)
                 .then(response => {
                     console.log(response);
+            this.id = response.data.id;
             this.edit_au_maquina = response.data.au_maquina;
             this.edit_au_so = response.data.au_so;
             this.edit_au_ip = response.data.au_ip;
             this.edit_au_navegador = response.data.au_navegador;
             this.edit_au_fecha = response.data.au_fecha;
-            this.getResults();
+                });
+            },
+            actualizarAuditoria(){
+                axios.put('update_auditoria', {
+                    id : this.id,
+                    au_maquina : this.edit_au_maquina,
+                    au_so : this.edit_au_so,
+                    au_ip : this.edit_au_ip,
+                    au_navegador : this.edit_au_navegador,
+                    au_fecha : this.edit_au_fecha,
                 })
+                .then(response => console.log(response))
             }
         }
 }

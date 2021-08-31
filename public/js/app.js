@@ -5102,6 +5102,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       auditoria: {},
+      id: '',
       au_maquina: '',
       au_so: '',
       au_ip: '',
@@ -5115,18 +5116,29 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    editData: function editData(id) {
+    editAuditoria: function editAuditoria(id) {
       var _this = this;
 
       axios.get('edit_auditoria/' + id).then(function (response) {
         console.log(response);
+        _this.id = response.data.id;
         _this.edit_au_maquina = response.data.au_maquina;
         _this.edit_au_so = response.data.au_so;
         _this.edit_au_ip = response.data.au_ip;
         _this.edit_au_navegador = response.data.au_navegador;
         _this.edit_au_fecha = response.data.au_fecha;
-
-        _this.getResults();
+      });
+    },
+    actualizarAuditoria: function actualizarAuditoria() {
+      axios.put('update_auditoria', {
+        id: this.id,
+        au_maquina: this.edit_au_maquina,
+        au_so: this.edit_au_so,
+        au_ip: this.edit_au_ip,
+        au_navegador: this.edit_au_navegador,
+        au_fecha: this.edit_au_fecha
+      }).then(function (response) {
+        return console.log(response);
       });
     }
   }
@@ -42069,9 +42081,9 @@ var render = function() {
         _vm._v(" "),
         _c(
           "tbody",
-          _vm._l(_vm.auditoria.data, function(auditoria, index) {
+          _vm._l(_vm.auditoria.data, function(auditoria, id) {
             return _c("tr", { key: auditoria.id }, [
-              _c("td", [_vm._v(_vm._s(index))]),
+              _c("td", [_vm._v(_vm._s(id))]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(auditoria.au_maquina))]),
               _vm._v(" "),
@@ -42156,7 +42168,7 @@ var render = function() {
         },
         on: {
           click: function($event) {
-            return _vm.editData(_vm.auditoria.id)
+            return _vm.editAuditoria(_vm.auditoria.id)
           }
         }
       },
@@ -42337,7 +42349,7 @@ var render = function() {
                       on: {
                         click: function($event) {
                           $event.preventDefault()
-                          return _vm.registrarAuditoria.apply(null, arguments)
+                          return _vm.actualizarAuditoria.apply(null, arguments)
                         }
                       }
                     },

@@ -13,8 +13,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="(auditoria,index) in auditoria.data" :key="auditoria.id">
-      <td>{{index}}</td>
+    <tr v-for="(auditoria,id) in auditoria.data" :key="auditoria.id">
+      <td>{{id}}</td>
       <td>{{auditoria.au_maquina}}</td>
       <td>{{auditoria.au_so}}</td>
       <td>{{auditoria.au_ip}}</td>

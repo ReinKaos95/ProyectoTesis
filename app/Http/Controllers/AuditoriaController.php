@@ -38,7 +38,7 @@ class AuditoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         $request->validate([
           'au_ip' => 'required|ip',
@@ -66,7 +66,7 @@ class AuditoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
          $auditorias = Auditoria::paginate(10);
         return response()->json($auditorias);
@@ -80,7 +80,7 @@ class AuditoriaController extends Controller
      */
     public function edit($id)
     {
-        $auditorias = Auditoria::findOrFail($id);
+        $auditorias = Auditoria::find($id);
         return response()->json($auditorias);
     }
 
@@ -91,19 +91,17 @@ class AuditoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        $auditorias = Auditoria::findOrFail($id);
-        return response()->json($auditorias);
-            /*$auditorias->au_maquina = $request->au_maquina;
+        $auditorias = Auditoria::findOrFail(request()->id);
+    
+            $auditorias->au_maquina = $request->au_maquina;
             $auditorias->au_so = $request->au_so;
             $auditorias->au_ip = $request->au_ip;
             $auditorias->au_navegador = $request->au_navegador;
             $auditorias->au_fecha = $request->au_fecha;
-            if ($auditorias->save()) {
-            
-        return redirect('/admin/auditoria');
-            } */
+            $auditorias->update();
+            return 'ok';
     }
 
     /**
