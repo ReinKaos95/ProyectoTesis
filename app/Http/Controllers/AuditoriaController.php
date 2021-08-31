@@ -93,7 +93,7 @@ class AuditoriaController extends Controller
      */
     public function update()
     {
-        $auditorias = Auditoria::findOrFail(request()->id);
+        $auditorias = Auditoria::find(request()->id);
     
             $auditorias->au_maquina = $request->au_maquina;
             $auditorias->au_so = $request->au_so;
@@ -112,8 +112,8 @@ class AuditoriaController extends Controller
      */
     public function destroy($id)
     {
-    Auditoria::destroy($id);
-      return back();
+    Auditoria::find(id)->delete();
+      return 'done';
     }
 
 

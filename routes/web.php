@@ -83,10 +83,13 @@ Route::resource('admin/auditoria', AuditoriaController::class);
 Route::get('getData', [AuditoriaController::class, 'show']);
 Route::post('store', [AuditoriaController::class, 'store']);
 Route::put('/edit_auditoria/{id}', [AuditoriaController::class, 'edit']);
-Route::put('/update_auditoria/{id}', [AuditoriaController::class, 'update']);
+Route::put('/delete_auditoria/{id}', [AuditoriaController::class, 'update']);
+Route::put('/update_auditoria', [AuditoriaController::class, 'destroy']);
+
+
 
 Route::resource('admin/departamentos', DepartamentoController::class);
-Route::put('/departamentosUpdate/{id}', [DepartamentoController::class, 'update']);
+
 
 Route::resource('config', configController::class);
 Route::resource('config/ayuda', ayudaController::class);

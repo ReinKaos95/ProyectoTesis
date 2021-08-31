@@ -20,7 +20,7 @@
       <td>{{auditoria.au_ip}}</td>
       <td>{{auditoria.au_navegador}}</td>
       <td>{{auditoria.au_fecha}}</td>
-      <td><edit/> / eliminar</td>
+      <td><edit/> <delete/> </td>
     </tr>
   </tbody>
 </table>
