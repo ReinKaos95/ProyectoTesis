@@ -54,7 +54,14 @@
             au_navegador : this.au_navegador,
             au_fecha : this.au_fecha
            })
-           .then(response => console.log(response));
+           .then(response => {
+            this.au_maquina = '';
+            this.au_so = '';
+            this.au_ip = '';
+            this.au_navegador = '';
+            this.au_fecha = '';
+            this.getResults();
+           });
          }
         }
     }

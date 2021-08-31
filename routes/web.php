@@ -82,7 +82,7 @@ Route::delete('/prestamosDelete/{id}', [PrestamoEquipoController::class, 'destro
 Route::resource('admin/auditoria', AuditoriaController::class);
 Route::get('getData', [AuditoriaController::class, 'show']);
 Route::post('store', [AuditoriaController::class, 'store']);
-
+Route::put('/edit_auditoria/{id}', [AuditoriaController::class, 'edit']);
 
 Route::resource('admin/departamentos', DepartamentoController::class);
 Route::put('/departamentosUpdate/{id}', [DepartamentoController::class, 'update']);

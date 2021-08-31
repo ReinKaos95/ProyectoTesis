@@ -69,7 +69,7 @@ class AuditoriaController extends Controller
     public function show($id)
     {
          $auditorias = Auditoria::paginate(10);
-        return response()->json(auditoria);
+        return response()->json($auditorias);
     }
 
     /**
@@ -80,8 +80,8 @@ class AuditoriaController extends Controller
      */
     public function edit($id)
     {
-       $auditorias=Auditoria::findOrFail($id);
-        return view('admin.equipment.edit', compact('equipment'));
+        $auditorias = Auditoria::findOrFail($id);
+        return response()->json($auditorias);
     }
 
     /**
@@ -93,16 +93,17 @@ class AuditoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $auditorias = Auditoria::findOrFail($id);
-        $auditorias->au_maquina = $request->au_maquina;
-        $auditorias->au_so = $request->au_so;
-        $auditorias->au_ip = $request->au_ip;
-        $auditorias->au_navegador = $request->au_navegador;
-        $auditorias->au_fecha = $request->au_fecha;
-           if ($auditorias->save()) {
-           
-       return redirect('/admin/auditoria');
-        } 
+        $auditorias = Auditoria::findOrFail($id);
+        return response()->json($auditorias);
+            /*$auditorias->au_maquina = $request->au_maquina;
+            $auditorias->au_so = $request->au_so;
+            $auditorias->au_ip = $request->au_ip;
+            $auditorias->au_navegador = $request->au_navegador;
+            $auditorias->au_fecha = $request->au_fecha;
+            if ($auditorias->save()) {
+            
+        return redirect('/admin/auditoria');
+            } */
     }
 
     /**
