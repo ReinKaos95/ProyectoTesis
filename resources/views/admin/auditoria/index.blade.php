@@ -28,7 +28,7 @@
           <i class="fas fa-backward mx-2"></i>
           <label class="texto-button">Volver</label>
         </a>
-        @include('admin.formsCreator.crearAuditoria')
+
       </div>
     </div>
   </div>

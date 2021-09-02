@@ -9,7 +9,6 @@
       <th scope="col">I.P.</th>
       <th scope="col">Navegador</th>
       <th scope="col">Fecha</th>
-      <th scope="col">Acciones.</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +19,6 @@
       <td>{{auditoria.au_ip}}</td>
       <td>{{auditoria.au_navegador}}</td>
       <td>{{auditoria.au_fecha}}</td>
-      <td><edit/> <delete/> </td>
     </tr>
   </tbody>
 </table>
